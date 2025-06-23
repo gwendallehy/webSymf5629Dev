@@ -1,0 +1,22 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block main %}
+    <h1>Portfolio</h1>
+
+    <div class="portfolio">
+        {% for item in portfolio %}
+            <div class="card">
+                <h2>{{ item.title }}</h2>
+                {% if item.imgLink %}
+                    <img src="{{ asset(item.imgLink) }}" alt="{{ item.title }}" style="max-width: 300px;">
+                {% endif %}
+                <p>{{ item.content|raw }}</p>
+            </div>
+        {% else %}
+            <p>Aucun projet dans le portfolio.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+{% endblock %}
+
+{% block main %}
+    <main class="main-content">
+            <div class="hero">
+                <img src="{{ asset('images/cam_img.png') }}" alt="Caméra" class="camera-img">
+                <h1 class="brand-title">5629 Productions</h1>
+            </div>
+    </main>
+{% endblock %}
+

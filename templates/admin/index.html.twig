@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/affichage.css') }}">
+{% endblock %}
+{% block main %}
+    <h1>Bienvenue sur l’espace d’administration</h1>
+    <p>Vous êtes connecté en tant que {{ app.user.username }}</p>
+
+    <div class="admin-links mt-4">
+        <ul>
+            <li><a href="{{ path('admin_entity_list', { type: 'article' }) }}">Gérer les Articles</a></li>
+            <li><a href="{{ path('admin_entity_list', { type: 'portfolio' }) }}">Gérer le Portfolio</a></li>
+            <li><a href="{{ path('admin_entity_list', { type: 'team' }) }}">Gérer l’Équipe</a></li>
+            <li><a href="{{ path('admin_entity_list', { type: 'event' }) }}">Gérer les Événements</a></li>
+        </ul>
+    </div>
+{% endblock %}

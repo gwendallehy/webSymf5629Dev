@@ -1,0 +1,139 @@
+*{
+    font-family: Roboto, serif;
+}
+/* ====== Layout de base ====== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    padding-bottom: 80px; /* espace pour footer fixé */
+}
+
+
+/* ====== Général ====== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ====== Header ====== */
+header {
+    background-color: #000000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Nav principal */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    font-size: 20px;
+}
+.admin-img{
+    width: 50px;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+
+}
+
+
+/* Logo */
+#nav-logo {
+    height: 50px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Liens */
+.nav-button a {
+    text-decoration: none;
+    color: #e87a3d;
+    padding: 10px 15px;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 5px;
+
+}
+
+.nav-button a:hover {
+    background-color: #e87a3d;
+    color: #ffffff;
+}
+
+/* Sous-menu vertical */
+.nav-vertical {
+    position: relative;
+}
+
+.nav-vertical:hover .dropdown {
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a1a1a;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #e87a3d;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dropdown a:hover {
+    background-color: #e87a3d;
+    color: white;
+}
+
+/* ====== Footer ====== */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #e87a3d;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.5;
+}

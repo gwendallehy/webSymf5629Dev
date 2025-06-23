@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ editMode ? 'Modifier' : 'Ajouter' }} un {{ type|capitalize }}
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/affichage.css') }}">
+{% endblock %}
+{% block main %}
+    <h1>{{ editMode ? 'Modifier' : 'Ajouter' }} un {{ type|capitalize }}</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.title ?? form.name) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.image) }}
+
+    {% if form.date is defined %}
+        {{ form_row(form.date) }}
+    {% endif %}
+
+    {% if form.place is defined %}
+        {{ form_row(form.place) }}
+    {% endif %}
+
+    <button class="btn btn-success">{{ editMode ? 'Mettre à jour' : 'Créer' }}</button>
+    {{ form_end(form) }}
+{% endblock %}

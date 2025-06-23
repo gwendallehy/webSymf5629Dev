@@ -1,0 +1,22 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block main %}
+    <h1>Articles</h1>
+
+    <div class="articles">
+        {% for article in articles %}
+            <div class="card">
+                <h2>{{ article.title }}</h2>
+                {% if article.imgLink %}
+                    <img src="{{ asset(article.imgLink) }}" alt="{{ article.title }}" style="max-width: 300px;">
+                {% endif %}
+                <p>{{ article.content|raw }}</p>
+            </div>
+        {% else %}
+            <p>Aucun article disponible.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

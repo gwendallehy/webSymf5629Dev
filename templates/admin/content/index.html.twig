@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion des {{ type|capitalize }}s{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/affichage.css') }}">
+{% endblock %}
+{% block main %}
+    <h1>Liste des {{ type|capitalize }}s</h1>
+
+    <a href="{{ path('admin_entity_new', { type: type }) }}" class="btn btn-success">Ajouter un {{ type }}</a>
+
+    <table class="table mt-4">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titre / Nom</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>
+                    {{ item.title ?? item.name ?? '—' }}
+                </td>
+                <td>
+                    {% if item.imgLink %}
+                        <img src="{{ asset(item.imgLink) }}" alt="Image" style="height: 50px;">
+                    {% else %}
+                        Aucune
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ path('admin_entity_edit', { type: type, id: item.id }) }}" class="btn btn-sm btn-primary">Modifier</a>
+
+                    <form method="post"
+                          action="{{ path('admin_entity_delete', { type: type, id: item.id }) }}"
+                          style="display:inline-block;"
+                          onsubmit="return confirm('Confirmer la suppression ?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete_' ~ type ~ '_' ~ item.id) }}">
+                        <button class="btn btn-sm btn-danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr><td colspan="4">Aucun {{ type }} trouvé.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,59 @@
+main.main-content{
+    margin: 0;
+    padding: 0px;
+}
+/* Hero plein écran */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000000; /* proche du fond de l’images */
+}
+
+/* Image en fond plein écran */
+.camera-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.05) rotate(0deg); /* centrer + initial state for animation */
+    width: 500px;
+    height: auto;
+    object-fit: cover;
+    animation: rotateIn 4s ease-in-out forwards;
+    z-index: 1;
+}
+
+
+/* Texte par-dessus l'images */
+.brand-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: #e87a3d;
+    opacity: 0;
+    animation: fadeInText 2s ease-in-out forwards;
+    animation-delay: 3s; /* correspond à la fin de la rotation */
+    text-shadow: 2px 2px 8px #000;
+    z-index: 2;
+}
+
+/* Animation rotation */
+@keyframes rotateIn {
+    from {
+        transform: translate(-50%, -50%) scale(1.05) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.05) rotate(360deg);
+    }
+}
+
+
+/* Animation texte */
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}

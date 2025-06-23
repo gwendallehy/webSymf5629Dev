@@ -1,0 +1,22 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Équipe{% endblock %}
+
+{% block main %}
+    <h1>Notre Équipe</h1>
+
+    <div class="team">
+        {% for member in team %}
+            <div class="card">
+                <h2>{{ member.name }}</h2>
+                {% if member.imgLink %}
+                    <img src="{{ asset(member.imgLink) }}" alt="{{ member.name }}" style="max-width: 200px;">
+                {% endif %}
+                <p>{{ member.content|raw }}</p>
+            </div>
+        {% else %}
+            <p>Aucun membre pour le moment.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

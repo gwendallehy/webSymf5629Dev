@@ -1,0 +1,26 @@
+
+<header>
+    <nav>
+        <a id="nav-logo-link" href="{{ path('main_home') }}">
+            <img id="nav-logo" src="{{ asset('images/logo5629.png') }}" alt="Logo 5629production">
+        </a>
+
+        <div class="navbar">
+            <p class="nav-button"><a href="{{ path('main_home') }}">Accueil</a></p>
+
+            <div class="nav-vertical">
+                <p class="nav-button"><a href="#">Ressources ▼</a></p>
+                <div class="dropdown">
+                    <a href="{{ path('articles') }}">Articles</a>
+                    <a href="{{ path('portfolio') }}">Portfolio</a>
+                    <a href="{{ path('team') }}">L'équipe</a>
+                </div>
+            </div>
+            <p class="nav-button"><a href="{{ path('events') }}">Nos évenements</a></p>
+            <p class="nav-button"><a href="{{ path('contact') }}">Nous contacter !</a></p>
+            <a href="{{ path('admin_dashboard') }}">
+                    <img src="{{ asset('images/adm_nav.png') }}" alt="admin" class="admin-img">
+                </a>
+        </div>
+    </nav>
+</header>

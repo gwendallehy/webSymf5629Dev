@@ -1,20 +1,51 @@
-
-###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
+# === Symfony / PHP ===
 /vendor/
-###< symfony/framework-bundle ###
-
-###> phpunit/phpunit ###
+/var/
+/.env.local
+.env.*.local
+/.phpunit.result.cache
 /phpunit.xml
-/.phpunit.cache/
-###< phpunit/phpunit ###
+/phpunit.xml.dist
 
-###> symfony/asset-mapper ###
+# === Cache et logs ===
+/var/cache/
+/var/log/
+/var/test/
+/var/tmp/
+
+# === IDE ===
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Node/npm/Yarn (si présent) ===
+/node_modules/
+/public/build/
+/public/storage/images/tmp/
+/yarn.lock
+package-lock.json
+
+# === Symfony Encore ===
 /public/assets/
-/assets/vendor/
-###< symfony/asset-mapper ###
+/assets/css/*.css.map
+/assets/js/*.js.map
+
+# === Uploaded images (mais conserve structure !) ===
+/public/storage/images/*
+!/public/storage/images/.gitkeep
+
+# === Env de dev ===
+.env.local
+.env.dev.local
+.env.test.local
+
+# === Misc ===
+*.log
+*.bak
+*.tmp
+*.~*
