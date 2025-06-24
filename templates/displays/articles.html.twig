@@ -10,15 +10,19 @@
 
 {% block main %}
     <h1>Articles</h1>
-
     <div class="articles">
         {% for article in articles %}
-            <div class="card">
+            <div class="card {{ loop.index is even ? 'even' : 'odd' }}">
                 <h2>{{ article.title }}</h2>
-                {% if article.imgLink %}
-                    <img src="{{ asset(article.imgLink) }}" alt="{{ article.title }}" style="max-width: 300px;">
-                {% endif %}
-                <p>{{ article.content|raw }}</p>
+                <div class="orange-bar"></div>
+                <div class="card-body">
+                    {% if article.imgLink %}
+                        <img src="{{ asset(article.imgLink) }}" alt="{{ article.title }}">
+                    {% endif %}
+                    <div class="card-content">
+                        <p>{{ article.content|raw }}</p>
+                    </div>
+                </div>
             </div>
         {% else %}
             <p>Aucun article disponible.</p>

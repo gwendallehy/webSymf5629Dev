@@ -23,15 +23,32 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 #[Route('/admin')]
 class AdminContentController extends AbstractController
 {
+    /**
+     * @throws \Exception
+     */
     private function handleFormImageUpload($form, $entity, string $uploadDir, SluggerInterface $slugger): void
     {
         $imageFile = $form->get('image')->getData();
+
         if ($imageFile) {
             $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
             $safeFilename = $slugger->slug($originalFilename);
-            $newFilename = $safeFilename . '-' . uniqid() . '.' . $imageFile->guessExtension();
+
+            // Sécuriser la récupération de l'extension
+            $extension = $imageFile->guessExtension() ?: $imageFile->getClientOriginalExtension();
+
+            if (!$extension) {
+                throw new \Exception('Impossible de déterminer l’extension du fichier image.');
+            }
+
+            $newFilename = $safeFilename . '-' . uniqid() . '.' . $extension;
 
             try {
+                // S’assurer que le dossier cible existe
+                if (!is_dir($uploadDir)) {
+                    mkdir($uploadDir, 0775, true);
+                }
+
                 $imageFile->move($uploadDir, $newFilename);
                 $entity->setImgLink('/storage/images/' . $newFilename);
             } catch (FileException $e) {
@@ -39,6 +56,7 @@ class AdminContentController extends AbstractController
             }
         }
     }
+
 
     #[Route('/{type}', name: 'admin_entity_list')]
     public function index(string $type, EntityManagerInterface $em): Response
@@ -57,6 +75,9 @@ class AdminContentController extends AbstractController
         ]);
     }
 
+    /**
+     * @throws \Exception
+     */
     #[Route('/{type}/new', name: 'admin_entity_new')]
     public function new(string $type, Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response
     {

@@ -1,22 +1,32 @@
-
 {% extends 'base.html.twig' %}
 
 {% block title %}Événements{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/card.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+
 {% block main %}
     <h1>Événements</h1>
-
     <div class="events">
         {% for event in events %}
-            <div class="card">
+            <div class="card {{ loop.index is even ? 'even' : 'odd' }}">
                 <h2>{{ event.name }}</h2>
-                <p><strong>Date :</strong> {{ event.date|date('d/m/Y H:i') }}</p>
-                <p><strong>Lieu :</strong> {{ event.place }}</p>
-                {% if event.imgLink %}
-                    <img src="{{ asset(event.imgLink) }}" alt="{{ event.name }}" style="max-width: 300px;">
-                {% endif %}
-                <p>{{ event.content|raw }}</p>
+                <div class="orange-bar"></div>
+                <div class="card-body">
+                    {% if event.imgLink %}
+                        <img src="{{ asset(event.imgLink) }}" alt="{{ event.name }}">
+                    {% endif %}
+                    <div class="card-content">
+                        <p><strong>Date :</strong> {{ event.date|date('d/m/Y H:i') }}</p>
+                        <p><strong>Lieu :</strong> {{ event.place }}</p>
+                        <p>{{ event.content|raw }}</p>
+                    </div>
+                </div>
             </div>
+
         {% else %}
             <p>Aucun événement à venir.</p>
         {% endfor %}
