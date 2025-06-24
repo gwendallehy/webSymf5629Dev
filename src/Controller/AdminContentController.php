@@ -23,7 +23,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 #[Route('/admin')]
 class AdminContentController extends AbstractController
 {
-    private function handleFormImageUpload($form, $entity, string $uploadDir, SluggerInterface $slugger)
+    private function handleFormImageUpload($form, $entity, string $uploadDir, SluggerInterface $slugger): void
     {
         $imageFile = $form->get('image')->getData();
         if ($imageFile) {

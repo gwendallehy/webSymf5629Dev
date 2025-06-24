@@ -7,6 +7,10 @@ framework:
 
     #esi: true
     #fragments: true
+# config/packages/framework.yaml
+    mailer:
+        envelope:
+            sender: 'gwendal.lehyoncour@gmail.com'
 
 when@test:
     framework:

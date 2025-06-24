@@ -1,0 +1,72 @@
+/* connexion.css */
+
+/* Centrage du formulaire */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Titre */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Champs de saisie */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #0cc66e;
+}
+
+/* Message d'erreur */
+.alert.alert-danger {
+    background-color: #ffdddd;
+    border-left: 5px solid #e74c3c;
+    color: #c0392b;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Bouton */
+button[type="submit"] {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background-color: #0cc66e;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #099a55;
+}

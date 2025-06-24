@@ -18,6 +18,13 @@
             </div>
             <p class="nav-button"><a href="{{ path('events') }}">Nos évenements</a></p>
             <p class="nav-button"><a href="{{ path('contact') }}">Nous contacter !</a></p>
+
+            {% if app.user %}
+                <p class="nav-button">
+                    <a href="{{ path('app_logout') }}">Déconnexion</a>
+                </p>
+            {% endif %}
+
             <a href="{{ path('admin_dashboard') }}">
                     <img src="{{ asset('images/adm_nav.png') }}" alt="admin" class="admin-img">
                 </a>

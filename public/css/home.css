@@ -14,10 +14,10 @@ main.main-content{
 /* Image en fond plein écran */
 .camera-img {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.05) rotate(0deg); /* centrer + initial state for animation */
-    width: 500px;
+    width: 700px;
     height: auto;
     object-fit: cover;
     animation: rotateIn 4s ease-in-out forwards;
@@ -28,7 +28,7 @@ main.main-content{
 /* Texte par-dessus l'images */
 .brand-title {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 5rem;

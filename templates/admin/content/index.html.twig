@@ -15,6 +15,7 @@
         <tr>
             <th>ID</th>
             <th>Titre / Nom</th>
+            <th>Content</th>
             <th>Image</th>
             <th>Actions</th>
         </tr>
@@ -25,6 +26,9 @@
                 <td>{{ item.id }}</td>
                 <td>
                     {{ item.title ?? item.name ?? '—' }}
+                </td>
+                <td>
+                    {{ item.content}}
                 </td>
                 <td>
                     {% if item.imgLink %}
@@ -39,7 +43,8 @@
                     <form method="post"
                           action="{{ path('admin_entity_delete', { type: type, id: item.id }) }}"
                           style="display:inline-block;"
-                          onsubmit="return confirm('Confirmer la suppression ?');">
+                          onsubmit="return confirm('Confirmer la suppression ?');"
+                          class="form">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete_' ~ type ~ '_' ~ item.id) }}">
                         <button class="btn btn-sm btn-danger">Supprimer</button>
                     </form>
