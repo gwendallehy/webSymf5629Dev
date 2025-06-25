@@ -1,86 +1,62 @@
-/*contact.css*/
-.page-container{
-    background-color: #000000;
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #fdfdfd;
 }
-/* Container centré, largeur plus large */
+
 .contact-container {
-    min-width: 600px;
-    max-width: 1000px;  /* plus large */
-    margin: 40px auto;
-    padding: 30px 40px;
-    background: #ffffff;
+    min-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-h1 {
+.contact-container h1 {
     text-align: center;
-    margin-bottom: 35px;
-    color: #e87a3d;
-    font-weight: 700;
-    font-size: 2.4rem;
-}
-
-label {
-    font-weight: 600;
-    color: #e87a3d;
-    margin-bottom: 10px;
-    display: block;
-    font-size: 1.1rem;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 14px 18px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 1.15rem;
-    transition: border-color 0.3s ease;
-    box-sizing: border-box;
-    resize: vertical;
-    font-family: inherit;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    outline: none;
-    border-color: #e87a3d;
-    box-shadow: 0 0 8px rgb(255, 178, 59);
-}
-
-/* Agrandir la textarea content */
-textarea {
-    min-height: 180px; /* plus grand */
-    font-size: 1.1rem;
-    line-height: 1.5;
-}
-
-button.btn-success {
-    background-color: #42a358;
-    border: none;
-    padding: 16px 24px;
-    font-size: 1.25rem;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-button.btn-success:hover {
-    background-color: #42a358;
+    margin-bottom: 1.5rem;
 }
 
 .alert {
-    font-weight: 600;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.alert-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.75rem;
     border-radius: 8px;
-    margin-bottom: 25px;
-    padding: 16px 24px;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.btn-success {
+    background-color: #16a34a;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-success:hover {
+    background-color: #15803d;
 }

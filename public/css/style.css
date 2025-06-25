@@ -121,10 +121,8 @@ nav {
 
 /* ====== Footer ====== */
 footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
     left: 0;
-    width: 100%;
     background-color: #000000;
     color: #e87a3d;
     text-align: center;

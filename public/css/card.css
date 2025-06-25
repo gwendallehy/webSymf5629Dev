@@ -1,9 +1,15 @@
-/*card.css*/
-h1{
+h1 {
     display: flex;
     justify-content: center;
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    color: #222;
 }
-.articles {
+
+.articles,
+.events,
+.portfolio {
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -20,10 +26,10 @@ h1{
     background-color: #ffffff;
     padding: 40px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s;
-    overflow: hidden; /* pour contenir les floats */
+    overflow: hidden; /* utile pour le float */
 }
 
 .card:hover {
@@ -35,6 +41,7 @@ h1{
     font-size: 2.2rem;
     color: #2d2d2d;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .orange-bar {
@@ -47,6 +54,7 @@ h1{
 /* Image + texte */
 .card-body {
     position: relative;
+    overflow: hidden; /* empêche débordement float */
 }
 
 /* Image par défaut */
@@ -66,7 +74,7 @@ h1{
     color: #333;
 }
 
-/* Alternance */
+/* Alternance image droite/gauche */
 .card.even img {
     float: right;
     margin: 0 0 20px 20px;
@@ -77,6 +85,53 @@ h1{
     margin: 0 20px 20px 0;
 }
 
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #f0f4f8;
+    font-family: 'Georgia', serif;
+    color: #1e1e1e;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.team .card {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.team .card:hover {
+    transform: translateY(-5px);
+}
+
+.team .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 2px solid #e87a3d;
+}
+
+.team .card h2 {
+    margin-bottom: 10px;
+    font-family: 'Merriweather', serif;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.team .card p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    text-align: justify;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .card-body img {
@@ -84,5 +139,17 @@ h1{
         display: block;
         width: 100%;
         margin: 0 0 20px 0;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-content p {
+        font-size: 1rem;
     }
 }
