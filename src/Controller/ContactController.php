@@ -18,10 +18,10 @@ class ContactController extends AbstractController
     public function testMail(MailerInterface $mailer): Response
     {
         $email = (new Email())
-            ->from('gwendal.lehyoncour@gmail.com')
-            ->to('gwendal.lehyoncour@gmail.com')
-            ->subject('Test de mail Symfony')
-            ->text('Ceci est un test.');
+            ->from('contact.gwendal.pro@gmail.com')
+            ->to('5629Productions.AutoMail@gmail.com')
+            ->subject('Test de mail Symfony le 2506')
+            ->text('Ceci est un test. 25/06');
 
         $mailer->send($email);
 
@@ -44,15 +44,21 @@ class ContactController extends AbstractController
             $em->flush();
 
             $email = (new Email())
-                ->from('gwendal.lehyoncour@gmail.com')
-                ->replyTo($contact->getMail())
-                ->to('gwendal.lehyoncour@gmail.com')  // Remplace par ton adresse email
-                ->subject('Nouveau message de contact')
+                ->from("5629Productions.AutoMail@gmail.com")
+                ->to('5629Productions.AutoMail@gmail.com')
+                ->subject(
+                    'Nouveau message de contact de : ' . $contact->getMail()
+                )
                 ->text(
-                    "Nom : " . $contact->getFirstname() . " " . $contact->getName() . "\n" .
-                    "mail : " . $contact->getMail() . "\n\n" .
-                    "Message :\n" . $contact->getContent()
+                    "📩 Nouvelle prise de contact\n\n" .
+                    "👤 Nom : " . $contact->getFirstname() . " " . $contact->getName() . "\n" .
+                    "📧 Email : " . $contact->getMail() . "\n\n" .
+                    "📝 Message :\n" .
+                    "───────────────\n" .
+                    $contact->getContent() . "\n" .
+                    "───────────────"
                 );
+
 
             $mailer->send($email);
 

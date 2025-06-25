@@ -1,23 +1,32 @@
-
 {% extends 'base.html.twig' %}
 
 {% block title %}Contact{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+
 {% block main %}
-    <h1>Contactez-nous</h1>
+    <div class="contact-container">
+        <h1>Contactez-nous</h1>
 
-    {% for label, messages in app.flashes %}
-        {% for message in messages %}
-            <div class="alert alert-{{ label }}">{{ message }}</div>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">{{ message }}</div>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
 
-    {{ form_start(form) }}
-    {{ form_row(form.name) }}
-    {{ form_row(form.firstname) }}
-    {{ form_row(form.mail) }}
-    {{ form_row(form.content) }}
+        {{ form_start(form) }}
 
-    <button type="submit" class="btn btn-success">Envoyer</button>
-    {{ form_end(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.mail) }}
+        {{ form_row(form.content) }}
+
+        <button type="submit" class="btn btn-success">Envoyer</button>
+
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

@@ -31,6 +31,9 @@ class Administrator implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    #[ORM\Column]
+    private ?string $email = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -95,6 +98,15 @@ class Administrator implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+    public function setEmail(string $email): static
+    {
+        $this->email = $email;
+        return $this;
+    }
     /**
      * @see UserInterface
      */

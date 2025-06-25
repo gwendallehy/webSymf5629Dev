@@ -1,3 +1,4 @@
+/*style.css (style principal de toutes les pages)*/
 *{
     font-family: Roboto, serif;
 }
@@ -19,8 +20,8 @@ html, body {
 
 .main-content {
     flex: 1;
-    padding: 20px;
-    padding-bottom: 80px; /* espace pour footer fixé */
+    /* espace pour footer fixé */
+    padding: 20px 20px 100px;
 }
 
 

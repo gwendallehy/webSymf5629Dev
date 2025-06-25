@@ -1,0 +1,79 @@
+/*team.css*/
+.team {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #f9f5f0;
+    font-family: 'Georgia', serif;
+    justify-items: center;
+}
+
+@media (min-width: 600px) {
+    .team {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .team {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    width: 100%;
+    max-width: 350px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.card h2 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 1.6rem;
+    color: #2d2d2d;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 500px) {
+    .card {
+        padding: 15px;
+    }
+
+    .card h2 {
+        font-size: 1.4rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+}
