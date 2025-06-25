@@ -6,7 +6,7 @@
 /.phpunit.result.cache
 /phpunit.xml
 /phpunit.xml.dist
-
+composer.lock
 # === Cache et logs ===
 /var/cache/
 /var/log/
