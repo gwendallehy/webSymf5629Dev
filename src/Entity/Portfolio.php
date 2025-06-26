@@ -23,6 +23,44 @@ class Portfolio
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $imgLink = null;
 
+    #[ORM\Column(type: 'boolean', options: ['default' => true])]
+    private bool $published = true;
+
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTimeInterface $dateCreation = null;
+
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTimeInterface $dateModification = null;
+    public function isPublished(): bool
+    {
+        return $this->published;
+    }
+
+    public function setPublished(bool $published): void
+    {
+        $this->published = $published;
+    }
+
+    public function getDateCreation(): ?\DateTimeInterface
+    {
+        return $this->dateCreation;
+    }
+
+    public function setDateCreation(?\DateTimeInterface $dateCreation): void
+    {
+        $this->dateCreation = $dateCreation;
+    }
+
+    public function getDateModification(): ?\DateTimeInterface
+    {
+        return $this->dateModification;
+    }
+
+    public function setDateModification(?\DateTimeInterface $dateModification): void
+    {
+        $this->dateModification = $dateModification;
+    }
+
     public function getId(): int
     {
         return $this->id;

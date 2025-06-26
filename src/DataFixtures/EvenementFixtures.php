@@ -17,6 +17,9 @@ class EvenementFixtures extends Fixture
             $evenement->setContent('Mauris sed mollis urna. Praesent quis purus augue. Sed a lectus lacinia, finibus felis non, dapibus nisi. Morbi justo neque, ultricies id pulvinar sed, elementum eget arcu. In est leo, commodo at pellentesque a, blandit sed mi. Sed ornare nunc vel aliquet egestas. Aliquam in ex eleifend, tincidunt mauris vitae, venenatis urna.');
             $evenement->setDate(new \DateTime("+$i days"));
             $evenement->setPlace("Pleyben");
+            $evenement->setPublished(true);
+            $evenement->setDateCreation(new \DateTime('now'));
+
 
             $manager->persist($evenement);
         }

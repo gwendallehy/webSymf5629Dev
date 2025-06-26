@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Article;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -18,6 +19,12 @@ class ArticleType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('content', TextareaType::class)
+
+            ->add('published', CheckboxType::class, [
+                "attr" => ["checked" => "true"],
+                "label" => "Affichage  de l'article ?",
+                "required" => false
+            ])
 
             ->add('image', FileType::class, [
                 'label' => 'Image',

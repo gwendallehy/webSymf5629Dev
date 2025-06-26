@@ -5,6 +5,7 @@ namespace App\Form;
 
 use App\Entity\Team;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -19,6 +20,11 @@ class TeamType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('content', TextareaType::class)
+            ->add('published', CheckboxType::class, [
+                "attr" => ["checked" => "true"],
+                "label" => "Affichage  du membre ?",
+                "required" => false
+            ])
             ->add('image', FileType::class, [
                 'label' => 'Photo',
                 'mapped' => false,

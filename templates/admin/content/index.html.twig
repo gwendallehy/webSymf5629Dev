@@ -16,6 +16,7 @@
             <th>ID</th>
             <th>Titre / Nom</th>
             <th>Content</th>
+            <th>publié ?</th>
             <th>Image</th>
             <th>Actions</th>
         </tr>
@@ -29,6 +30,13 @@
                 </td>
                 <td>
                     {{ item.content}}
+                </td>
+                <td>
+                    {% if item.published == 1 %}
+                        Publié
+                    {% else %}
+                        Non publié
+                    {%  endif %}
                 </td>
                 <td>
                     {% if item.imgLink %}

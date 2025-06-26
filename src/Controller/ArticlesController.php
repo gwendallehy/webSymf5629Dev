@@ -14,7 +14,7 @@ class ArticlesController extends AbstractController
 
     #[Route("/articles", name: "articles", methods: ["GET"])]
     public function articles(ArticleRepository $articleRepository) : Response {
-        $articles = $articleRepository->findAll();
+        $articles = $articleRepository->findBy(["published" => true], ["dateCreation" => "DESC"]);
 
         return $this->render('displays/articles.html.twig', [
             'articles' => $articles,
@@ -25,7 +25,7 @@ class ArticlesController extends AbstractController
     #[Route("/portfolio", name: "portfolio", methods: ["GET"])]
     public function portfolio(PortfolioRepository $portfolioRepository) : Response
     {
-        $portfolio = $portfolioRepository->findAll();
+        $portfolio = $portfolioRepository->findBy(["published" => true], ["dateCreation" => "DESC"]);
         return $this->render('displays/portfolio.html.twig',[
             'portfolio' => $portfolio,
         ]);
@@ -33,7 +33,7 @@ class ArticlesController extends AbstractController
 
     #[Route("/team", name: "team", methods: ["GET"])]
     public function team(TeamRepository $teamRepository) : Response {
-        $team = $teamRepository->findAll();
+        $team = $teamRepository->findBy(["published" => true], ["dateCreation" => "DESC"]);
         return $this->render('displays/team.html.twig',[
             'team' => $team,
         ]);

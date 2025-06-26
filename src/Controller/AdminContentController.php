@@ -91,7 +91,7 @@ class AdminContentController extends AbstractController
 
         $form = $this->createForm($formClass, $entity);
         $form->handleRequest($request);
-
+        $entity->setDateCreation(new \DateTime('now'));
         if ($form->isSubmitted() && $form->isValid()) {
             $this->handleFormImageUpload($form, $entity, $this->getParameter('kernel.project_dir') . '/public/storage/images', $slugger);
             $em->persist($entity);
@@ -124,8 +124,9 @@ class AdminContentController extends AbstractController
 
         $form = $this->createForm($formClass, $entity);
         $form->handleRequest($request);
-
+        $entity->setDateModification(new \DateTime('now'));
         if ($form->isSubmitted() && $form->isValid()) {
+
             $this->handleFormImageUpload($form, $entity, $this->getParameter('kernel.project_dir') . '/public/storage/images', $slugger);
             $em->flush();
             return $this->redirectToRoute('admin_entity_list', ['type' => $type]);

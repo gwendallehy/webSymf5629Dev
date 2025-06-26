@@ -27,20 +27,43 @@ main {
     margin: 0 auto;
     padding: 2rem 1rem;
     box-sizing: border-box;
+}body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f4f6f9;
+    color: #2c3e50;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sticky footer setup */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
 }
 
 /* Footer style */
 footer {
-    flex-shrink: 0;
-    background-color: #f2f2f2;
-    padding: 1rem 0;
-    text-align: center;
-    color: #555;
-    font-size: 0.9rem;
+    display: none;
 }
 
 /* Titres et alertes centrés */
-h1, .alert {
+h1, .alert , p{
     text-align: center;
 }
 
