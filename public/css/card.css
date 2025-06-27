@@ -90,11 +90,12 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     padding: 40px 20px;
-    background-color: #f0f4f8;
+    background-color: rgb(232, 122, 61);
     font-family: 'Georgia', serif;
     color: #1e1e1e;
     max-width: 1200px;
     margin: auto;
+    border-radius: 20px ;
 }
 
 .team .card {
@@ -111,10 +112,12 @@ h1 {
 }
 
 .team .card img {
-    max-width: 100%;
-    height: auto;
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: cover; /* Pour garder le ratio et couper si besoin */
+    margin: 0 auto 15px auto; /* Centrer horizontalement */
+    display: block;
     border-radius: 50%;
-    margin-bottom: 15px;
     border: 2px solid #e87a3d;
 }
 
@@ -152,4 +155,22 @@ h1 {
     .card-content p {
         font-size: 1rem;
     }
+    .team {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    .team .card {
+        padding: 20px;
+    }
+
+    .team .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .team .card p {
+        font-size: 0.95rem;
+    }
 }
+
