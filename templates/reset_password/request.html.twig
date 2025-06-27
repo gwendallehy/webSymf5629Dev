@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pwd.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
 {% block title %}Réinitialiser le mot de passe{% endblock %}
 
 {% block main %}
-    <h1>Mot de passe oublié</h1>
-
-    {{ form_start(requestForm) }}
-    {{ form_row(requestForm.email) }}
-    <button class="btn btn-primary">Envoyer le lien de réinitialisation</button>
-    {{ form_end(requestForm) }}
+    <div class="password-reset-container">
+        <h1>Mot de passe oublié</h1>
+        {{ form_start(requestForm) }}
+        {{ form_row(requestForm.email) }}
+        <button class="btn btn-primary">Envoyer le lien de réinitialisation</button>
+        {{ form_end(requestForm) }}
+    </div>
 {% endblock %}

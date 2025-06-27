@@ -19,7 +19,11 @@ class TeamType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('content', TextareaType::class)
+            ->add('content', TextareaType::class,[
+                'attr' => [
+                    'rows' => 5,
+                ],
+            ])
             ->add('published', CheckboxType::class, [
                 "attr" => ["checked" => "true"],
                 "label" => "Affichage  du membre ?",

@@ -28,6 +28,9 @@ class ContactType extends AbstractType
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'Message',
+                'attr' => [
+                    'rows' => 5,
+                ],
             ])
             ->add('website', TextType::class, [
                 'mapped' => false,

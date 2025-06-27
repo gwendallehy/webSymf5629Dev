@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pwd.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
 {% block title %}Email envoyé{% endblock %}
 
 {% block main %}
-    <h1>Consultez votre boîte mail</h1>
-    <p>Si un compte correspond à l’email indiqué, un lien de réinitialisation vous a été envoyé.</p>
-{% endblock %}
+    <div class="password-reset-container">
+        <h1>Consultez votre boîte mail</h1>
+        <p>Si un compte correspond à l’email indiqué, un lien de réinitialisation vous a été envoyé.</p>
+    </div>
+   {% endblock %}

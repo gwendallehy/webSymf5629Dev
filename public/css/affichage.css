@@ -81,6 +81,7 @@ h1, .alert , p{
 .btn-success {
     background-color: #28a745;
     color: white;
+    width: 200px;
 }
 
 .btn-success:hover {
@@ -118,10 +119,16 @@ h1, .alert , p{
 }
 
 /* Formulaire */
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 form .form-row,
 form div {
+
     margin-bottom: 1rem;
-    max-width: 600px;
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
 }

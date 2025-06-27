@@ -10,8 +10,6 @@ body {
 /* Sticky footer setup */
 html, body {
     height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -26,55 +24,59 @@ main {
     margin: 0 auto;
     padding: 2rem 1rem;
     box-sizing: border-box;
-    min-height: 100vh;
-}
-form{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
 }
 
+/* Form Container */
 form {
-
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
+
 /* Footer style */
 footer {
-    flex-shrink: 0;
-    bottom : 0;
-    background-color: #f2f2f2;
-    padding: 1rem 0;
-    text-align: center;
-    color: #555;
-    font-size: 0.9rem;
+    display : none;
 }
+
+/* Heading */
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #2563eb;
 }
 
+/* Label & Inputs */
 label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: #333;
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"],
+textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-bottom: 1rem;
+    font-size: 16px;
 }
 
-button[type="submit"] {
+/* Submit button */
+button[type="submit"],
+button.btn,
+.btn {
     width: 100%;
     padding: 0.75rem;
     background-color: #2563eb;
@@ -82,16 +84,44 @@ button[type="submit"] {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+button.btn:hover,
+.btn:hover {
     background-color: #1d4ed8;
 }
 
+/* Alert Styles */
 .alert-danger {
     background-color: #fee2e2;
     color: #991b1b;
     padding: 1rem;
     border-radius: 6px;
     margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }

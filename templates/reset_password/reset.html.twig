@@ -1,16 +1,20 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/pwd.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
 {% block title %}Nouveau mot de passe{% endblock %}
 
 {% block main %}
-    <h1>Changer votre mot de passe</h1>
-
-    {% for message in app.flashes('reset_password_error') %}
-        <div class="alert alert-danger">{{ message }}</div>
-    {% endfor %}
-
-    {{ form_start(resetForm) }}
-    {{ form_row(resetForm.plainPassword) }}
-    <button class="btn btn-success">Changer le mot de passe</button>
-    {{ form_end(resetForm) }}
+    <div class="password-reset-container">
+        <h1>Changer votre mot de passe</h1>
+        {% for message in app.flashes('reset_password_error') %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+        {{ form_start(resetForm) }}
+        {{ form_row(resetForm.plainPassword) }}
+        <button class="btn btn-success">Changer le mot de passe</button>
+        {{ form_end(resetForm) }}
+    </div>
 {% endblock %}

@@ -1,13 +1,76 @@
-<h2>Réinitialisation de votre mot de passe</h2>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Réinitialisation de votre mot de passe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
 
-<p>Bonjour,</p>
+        .email-container {
+            max-width: 600px;
+            background-color: #ffffff;
+            margin: auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
 
-<p>Vous avez demandé à réinitialiser votre mot de passe. Cliquez ci-dessous :</p>
+        h2 {
+            color: #e87a3d;
+            text-align: center;
+        }
 
-<p>
-    <a href="{{ url('app_reset_password', {'token': resetToken.token}) }}">
-        Réinitialiser mon mot de passe
-    </a>
-</p>
+        p {
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
-<p>Ce lien est valide pendant {{ resetToken.expiresAt|date('d/m/Y H:i') }}.</p>
+        .btn {
+            display: inline-block;
+            background-color: #e87a3d;
+            color: #ffffff !important;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 13px;
+            color: #888888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <h2>Réinitialisation de votre mot de passe</h2>
+
+    <p>Bonjour,</p>
+
+    <p>Vous avez demandé à réinitialiser votre mot de passe. Cliquez sur le bouton ci-dessous pour le faire :</p>
+
+    <p style="text-align: center;">
+        <a href="{{ url('app_reset_password', {'token': resetToken.token}) }}" class="btn">
+            Réinitialiser mon mot de passe
+        </a>
+    </p>
+
+    <p>Ce lien est valide jusqu’au <strong>{{ resetToken.expiresAt|date('d/m/Y H:i') }}</strong>.</p>
+
+    <p>Si vous n’êtes pas à l’origine de cette demande, vous pouvez ignorer ce message.</p>
+
+    <div class="footer">
+        &copy; {{ "now"|date("Y") }} 5629productions — Tous droits réservés.
+    </div>
+</div>
+</body>
+</html>

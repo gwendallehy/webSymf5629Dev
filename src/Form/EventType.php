@@ -25,7 +25,11 @@ class EventType extends AbstractType
                 'widget' => 'single_text'
             ])
             ->add('place', TextType::class)
-            ->add('content', TextareaType::class)
+            ->add('content', TextareaType::class,[
+                'attr' => [
+                    'rows' => 5,
+                ],
+            ])
             ->add('published', CheckboxType::class, [
                 "attr" => ["checked" => "true"],
                 "label" => "Affichage  de l'event ?",

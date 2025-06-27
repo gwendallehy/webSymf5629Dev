@@ -136,3 +136,136 @@ footer p {
     margin: 0;
     line-height: 1.5;
 }
+.nav-toggle-label {
+    display: none;
+}
+@media (max-width: 768px) {
+
+    /* ====== Header ====== */
+    header {
+        background-color: #000000;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    /* Nav principal */
+    nav {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+    .admin-img{
+        width: 0px;
+        filter: invert(100%);
+        -webkit-filter: invert(100%);
+
+    }
+
+    /* Logo */
+    #nav-logo {
+        height: 50px;
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column; /* Pour empiler les éléments */
+        align-items: flex-start;
+        gap: 5px; /* Espacement réduit */
+        padding: 10px 0;
+    }
+
+    .nav-button a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    /* Enlève le comportement dropdown sur mobile */
+    .nav-vertical {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Masque le bouton parent "Ressources ▼" */
+    .nav-vertical > .nav-button {
+        display: none;
+    }
+
+    /* Affiche les liens normalement */
+    .dropdown {
+        display: flex !important;
+        flex-direction: column;
+        position: static;
+        box-shadow: none;
+        background: none;
+        padding-left: 0;
+    }
+
+    .dropdown a {
+        margin: 10px 0 10px 0;
+    }
+
+    /* Hamburger button */
+    .nav-toggle-label {
+        display: block;
+        color: #e87a3d;
+        font-size: 24px;
+        cursor: pointer;
+        margin-left: auto;
+        padding: 10px;
+    }
+
+    /* Hide navbar by default */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #000;
+        margin-top: 10px;
+    }
+
+    /* Show navbar when toggle is checked */
+    #nav-toggle:checked + .nav-toggle-label + .navbar {
+        display: flex;
+    }
+
+    /* Adjust nav buttons */
+    .nav-button a {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+
+    /* Logo */
+    #nav-logo {
+        height: 40px;
+    }
+
+    /* Admin image */
+    .admin-img {
+        display: none;
+    }
+
+    /* Optional: prevent hover dropdown on mobile */
+    .nav-vertical:hover .dropdown {
+        display: none;
+    }
+
+    /* ====== Footer ====== */
+    footer {
+        position: relative;
+        left: 0;
+        background-color: #000000;
+        color: #e87a3d;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 14px;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+
+}

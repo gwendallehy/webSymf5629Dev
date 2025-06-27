@@ -1,0 +1,101 @@
+/* ---- FORM CONTAINERS ---- */
+.password-reset-container {
+    max-width: 500px;
+    margin: 4rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ---- HEADINGS ---- */
+.password-reset-container h1 {
+    text-align: center;
+    color: #e87a3d;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* ---- ALERT MESSAGES ---- */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+.alert-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+/* ---- FORMS ---- */
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    font-size: 16px;
+}
+
+/* ---- BUTTONS ---- */
+button.btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #e87a3d;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #d5692e;
+}
+
+.btn-success {
+    background-color: #16a34a;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #15803d;
+}
+
+footer{
+    display :none;
+}
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .password-reset-container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .password-reset-container h1 {
+        font-size: 1.5rem;
+    }
+
+    button.btn {
+        font-size: 15px;
+    }
+}
